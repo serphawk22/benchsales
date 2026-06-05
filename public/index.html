@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bench Sales – Resume Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Internal localhost-only tool for bench sales recruiters to check and send resumes via n8n."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <h1>Bench Sales – Resume Checker</h1>
+        <p class="subtitle">
+          Localhost-only internal tool to quickly check and send a consultant's resume against a Job Description.
+        </p>
+      </header>
+
+      <main class="main-content">
+        <form id="resumeForm" class="card">
+          <div class="sections-wrapper">
+            <!-- Consultant / Resume Section -->
+            <section class="section">
+              <h2 class="section-title">Consultant / Resume</h2>
+              <p class="section-help">
+                Upload up to <strong>3</strong> resumes (PDF or DOC/DOCX). Select the one you want to send.
+              </p>
+
+              <div class="field-group">
+                <label for="resumeInput" class="field-label">Upload Resume Files</label>
+                <input
+                  type="file"
+                  id="resumeInput"
+                  name="resumeFiles"
+                  accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                  multiple
+                />
+                <p class="field-hint">Maximum 3 files per batch. Only one will be sent at a time.</p>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label">Uploaded Resumes</label>
+                <div id="resumeList" class="resume-list">
+                  <p class="empty-state">No resumes uploaded yet.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Job Description Section -->
+            <section class="section">
+              <h2 class="section-title">Job Description</h2>
+              <p class="section-help">
+                Paste the complete Job Description here (e.g. copied from LinkedIn or any job portal).
+              </p>
+
+              <div class="field-group full-height">
+                <label for="jdText" class="field-label">Job Description</label>
+                <textarea
+                  id="jdText"
+                  name="jdText"
+                  rows="12"
+                  placeholder="Paste the Job Description copied from LinkedIn here..."
+                ></textarea>
+              </div>
+            </section>
+          </div>
+
+          <!-- Actions & Status -->
+          <div class="actions-row">
+            <button type="submit" id="submitBtn" class="primary-button">
+              Check &amp; Send Resume
+            </button>
+            <div id="statusMessage" class="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </main>
+
+      <footer class="app-footer">
+        <p>
+          This is a localhost-only internal tool. Data is forwarded to your local n8n workflow at
+          <code>http://localhost:5678/webhook/bench-sales</code>.
+        </p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+

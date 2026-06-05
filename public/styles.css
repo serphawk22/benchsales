@@ -1,0 +1,264 @@
+/* Basic reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #1f2933;
+  background-color: #f3f4f6;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.app-container {
+  max-width: 1100px;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  padding-bottom: 1rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: #111827;
+}
+
+.subtitle {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sections-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.section {
+  flex: 1 1 300px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  color: #111827;
+}
+
+.section-help {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.field-group {
+  margin-bottom: 0.75rem;
+}
+
+.full-height {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.35rem;
+}
+
+.field-hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+input[type='file'] {
+  display: block;
+  width: 100%;
+  padding: 0.35rem 0;
+  font-size: 0.9rem;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 200px;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  padding: 0.6rem 0.7rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: #111827;
+  background-color: #f9fafb;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
+  background-color: #ffffff;
+}
+
+.resume-list {
+  border-radius: 0.5rem;
+  border: 1px dashed #d1d5db;
+  padding: 0.55rem 0.7rem;
+  background-color: #f9fafb;
+  min-height: 50px;
+}
+
+.resume-item {
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0.25rem;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+
+.resume-item:hover {
+  background-color: #e5e7eb;
+}
+
+.resume-item input[type='radio'] {
+  margin-right: 0.5rem;
+}
+
+.resume-name {
+  font-size: 0.9rem;
+  color: #111827;
+  word-break: break-all;
+}
+
+.empty-state {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.primary-button {
+  border: none;
+  outline: none;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 18px rgba(37, 99, 235, 0.35);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 22px rgba(37, 99, 235, 0.45);
+  filter: brightness(1.02);
+}
+
+.primary-button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 14px rgba(37, 99, 235, 0.35);
+}
+
+.primary-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.status {
+  min-height: 1.25rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.status-info {
+  color: #2563eb;
+}
+
+.status-success {
+  color: #047857;
+}
+
+.status-error {
+  color: #b91c1c;
+}
+
+.app-footer {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  text-align: center;
+}
+
+.app-footer code {
+  background-color: #111827;
+  color: #e5e7eb;
+  padding: 0.1rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1.1rem;
+  }
+
+  .sections-wrapper {
+    flex-direction: column;
+  }
+}
+
