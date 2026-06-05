@@ -5,14 +5,13 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const HOST = '127.0.0.1';
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Serve static frontend files from /public
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Start server, bound to localhost only
-app.listen(PORT, HOST, () => {
-  console.log(`Bench sales tool server running at http://${HOST}:${PORT}`);
+// Start server
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Bench sales tool server running on port ${PORT}`);
 });
 
