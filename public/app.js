@@ -287,7 +287,7 @@
       setStatus('Processing...', 'info'); // Required message
 
       // Send form data directly to n8n webhook
-      fetch('http://localhost:5678/webhook-test/bench-sales', {
+      fetch('https://primary-production-d40bc.up.railway.app/webhook/bench-sales', {
         method: 'POST',
         body: formData
       })
