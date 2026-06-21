@@ -22,8 +22,8 @@
   const togglePasswordBtn = document.getElementById('togglePasswordBtn');
 
   // Hardcoded Admin credentials (custom user credentials preserved)
-  const ADMIN_EMAIL = 'anupojubhavani9849@gmail.com';
-  const ADMIN_PASSWORD = 'PRASANTH@04';
+  const ADMIN_EMAIL = 'kavyasri@tekconnectedges.com';
+  const ADMIN_PASSWORD = 'Ammu@1436';
 
   // Resume Form selectors
   const fileInput = document.getElementById('resumeInput');
