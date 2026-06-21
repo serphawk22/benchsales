@@ -25,6 +25,7 @@
   const ADMIN_EMAIL = 'kavyasri@tekconnectedges.com';
   const ADMIN_PASSWORD = 'Ammu@1436';
 
+  
   // Resume Form selectors
   const fileInput = document.getElementById('resumeInput');
   const uploadArea = document.querySelector('.upload-area');
